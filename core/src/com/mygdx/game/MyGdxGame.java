@@ -6,6 +6,8 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.mygdx.game.helpers.AssetManager;
+import com.mygdx.game.screens.GameScreen;
 
 public class MyGdxGame extends Game {
 	SpriteBatch batch;
@@ -15,13 +17,15 @@ public class MyGdxGame extends Game {
 	public void create () {
 
 		Gdx.app.log("LifeCyCle", "create");
+        AssetManager.load();
+        setScreen (new GameScreen());
 
 	}
 
 	@Override
 	public void render () {
 		super.render();
-		//Gdx.app.log("LifeCyCle", "render");
+		Gdx.app.log("LifeCyCle", "render");
 	}
 	
 	@Override
